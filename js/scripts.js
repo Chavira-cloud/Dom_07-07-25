@@ -40,7 +40,7 @@ console.log(nuevoEnlace);
 //eventos 
 console.log(1);
 
-window.addEventListener('load', function(){  //load espera a que el js y los archivos que depemdem de; HTML esten listos
+window.addEventListener('load', function(){  //load espera a que el js y los archivos que dependen del HTML esten listos
     console.log(2);
 })
 
@@ -48,6 +48,20 @@ window.onload = function(){
     console.log(3);
 }
 
+document.addEventListener('DOMContentLoaded', function(){ // solo espera por el html, pero no espera css o imagenes 
+ console.log(4);
+});
+
 console.log(5);
 
-//prueba
+//Seleccionar elementos y asociarlos a un evento
+
+const btnEnviar = document.querySelector('.boton--primario');
+btnEnviar.addEventListener('click', function(e){
+    console.log(e);
+    e.preventDefault();
+
+    // validar un formulario
+
+    console.log('enviando formulario');
+});
